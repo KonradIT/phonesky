@@ -1,0 +1,21 @@
++ what is this:
+
+Scripts to reinstall apps from various sources using google play store (also known as phonesky) and F-droid.
+
++ lolwhy
+
+I flashed the wrong boot img and didn't do a titanium backup, did a twrp backup and it failed to restore. Always backup before flashing kids. And yes I tried all of the things I could think at that moment before wiping /data
+
++ how
+
+    - restore your twrp backup, follow step 2
+    - run genapplist.sh (make sure you have adb enabled) or if you didn't have a twrp backup follow step 3
+    - This requires you to have your /sdcard partition untouched, run genapplist_data.sh
+    - ok now you have your applist.txt now open phonesky.py in your text editor and replace X1 Y1 X2 Y2. X1 and Y1 are the coordinates for the install button in phonesky_button_1.png (to get the numbers I screenshotted and used GIMP), X2/Y2 are for the confirmation button in phonesky_button_2.png
+    - run phonesky.py, make sure apps are installing
+    - run phonesky_diff.py to check which apps are installed and which ones are missing
+    + Now the following steps apply to those using F-Droid
+    - edit fdroid.py to fill the values of the install button using fdroid_button_1.png and fdroid_button_2.png
+    - run phonesky.py
+
+I really, really hope you don't have to use it, I'm uploading just in case i fuck up again. Yes there's probably a better way to do this using the play.google.com or fossdroid.com but that didn't come into my mind at the time of restoring, I just wanted the apps back.
